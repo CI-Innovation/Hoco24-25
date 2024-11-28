@@ -1,0 +1,111 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: navy; /* Navy background */
+    overflow: hidden; /* Prevent scrollbars */
+    position: relative;
+    height: 100vh;
+}
+
+/* Mansion */
+.mansion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Place the mansion above fireworks */
+}
+
+.mansion img {
+    max-width: 50%;
+    height: auto;
+}
+
+/* Fireworks container */
+.fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full height for particle launch */
+    z-index: 1; /* Place fireworks behind the mansion */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Flying particle (launching particle) */
+.launching-particle {
+    position: absolute;
+    width: 4px; /* Visible size */
+    height: 6px; /* Visible size */
+    background-color: gold;
+    border-radius: 50%;
+    animation: fly-up 1.5s ease-out forwards;
+}
+
+/* Animation for flying particle */
+@keyframes fly-up {
+    0% {
+        transform: translateY(100vh); /* Start at the bottom of the screen */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(var(--explosion-height)); /* End at explosionHeight */
+        opacity: 1;
+    }
+}
+
+/* Firework particle styles */
+.firework {
+    position: absolute;
+    width: 8px; /* Particle size */
+    height: 8px; /* Particle size */
+    background-color: gold;
+    border-radius: 50%;
+    animation: fade 1.5s ease-out forwards, move-out 1.5s ease-out forwards, trail 3s linear forwards;
+    box-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold; /* Tail effect */
+}
+
+/* Particle fade animation */
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Particle move-out animation: from the center to the target position */
+@keyframes move-out {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(var(--offset-x)) translateY(var(--offset-y)); /* Move outward */
+        opacity: 1;
+    }
+    85% {
+        transform: translateX(var(--offset-x)) translateY(calc(var(--offset-y) + 100px)); /* Fall downward with slight horizontal drift */
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(var(--offset-x)) translateY(calc(var(--offset-y) + 200px)); /* Fall downward with slight horizontal drift */
+        opacity: 0;
+    }
+}
+
+/* Trail effect */
+@keyframes trail {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+        box-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold; /* Initial tail */
+    }
+    100% {
+        transform: translateX(var(--offset-x)) translateY(var(--offset-y)); /* Follow the move-out path */
+        opacity: 0;
+        box-shadow: 0 0 50px gold, 0 0 100px gold, 0 0 200px gold; /* Fading trail */
+    }
+}
