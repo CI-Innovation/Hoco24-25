@@ -44,12 +44,35 @@ body {
     position: absolute;
     top: 0;
     transform: translateX(0%) translateY(0%); /* Correct the centering by moving it left by 50% of its width */
-    max-width: 100%; /* Set the maximum width (adjust as necessary) */
-    height: auto; /* Maintain aspect ratio */
+    max-height: 90%; /* Set the maximum width (adjust as necessary) */
     z-index: 2; /* Ensure the mansion is above the fireworks */
 }
 .border img {
-    height: 100%; /* Make sure the image fills the mansion container */
+    height: 90%; /* Make sure the image fills the mansion container */
+}
+
+.leftdoor {
+    position: absolute;
+    top: 64%;
+    left: 41.1%;
+    max-width: 95%; /* Set the maximum width (adjust as necessary) */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 5; /* Ensure the mansion is above the fireworks */
+}
+.leftdoor img {
+    width: 95%; /* Make sure the image fills the mansion container */
+}
+
+.rightdoor {
+    position: absolute;
+    top: 64%;
+    left: 49.9%;
+    max-width: 95%; /* Set the maximum width (adjust as necessary) */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 5; /* Ensure the mansion is above the fireworks */
+}
+.rightdoor img {
+    width: 95%; /* Make sure the image fills the mansion container */
 }
 
 /* Fireworks container */
