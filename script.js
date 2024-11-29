@@ -10,7 +10,7 @@ function createFirework() {
     launcher.style.left = `${launchX}px`;
 
     // Randomize the Y-value for explosion (e.g., between 10% and 70% of screen height)
-    const explosionHeight = Math.random() * (window.innerHeight * 0.3) + window.innerHeight * 0.1;
+    const explosionHeight = Math.random() * (window.innerHeight * 0.2) + window.innerHeight * 0.1;
 
     // Set custom animation to fly up to explosionHeight
     launcher.style.animation = `fly-up 1.5s ease-out forwards`;
@@ -27,7 +27,7 @@ function createFirework() {
 }
 
 function explode(centerX, centerY) {
-    const numParticles = 30; // Number of particles for a dense explosion
+    const numParticles = 400; // Number of particles for a dense explosion
 
     for (let i = 0; i < numParticles; i++) {
         const firework = document.createElement('div');

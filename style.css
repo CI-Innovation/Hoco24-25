@@ -2,8 +2,10 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: navy; /* Navy background */
-    overflow: hidden; /* Prevent scrollbars */
+    background-image: url('img/Background.png'); /* Set the background image */
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     position: relative;
     height: 100vh;
 }
@@ -11,15 +13,43 @@ body {
 /* Mansion */
 .mansion {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2; /* Place the mansion above fireworks */
+    bottom: 0; /* Place it at the bottom */
+    left: 50%; /* Horizontally center it */
+    transform: translateX(-70%) translateY(3%); /* Correct the centering by moving it left by 50% of its width */
+    max-width: 140%; /* Set the maximum width (adjust as necessary) */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 4; /* Ensure the mansion is above the fireworks */
 }
 
 .mansion img {
-    max-width: 50%;
-    height: auto;
+    width: 140%; /* Make sure the image fills the mansion container */
+    height: auto; /* Keep aspect ratio intact */
+}
+
+.moon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-53%) translateY(-3%); /* Correct the centering by moving it left by 50% of its width */
+    max-width: 100%; /* Set the maximum width (adjust as necessary) */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 3; /* Ensure the mansion is above the fireworks */
+}
+.moon img {
+    width: 100%; /* Make sure the image fills the mansion container */
+    height: auto; /* Keep aspect ratio intact */
+}
+
+.border {
+    position: absolute;
+    top: 0;
+    transform: translateX(0%) translateY(0%); /* Correct the centering by moving it left by 50% of its width */
+    max-width: 100%; /* Set the maximum width (adjust as necessary) */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 2; /* Ensure the mansion is above the fireworks */
+}
+.border img {
+    height: 100%; /* Make sure the image fills the mansion container */
 }
 
 /* Fireworks container */
@@ -29,7 +59,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%; /* Full height for particle launch */
-    z-index: 1; /* Place fireworks behind the mansion */
+    z-index: 2; /* Place fireworks behind the mansion */
     pointer-events: none; /* Prevent interaction */
 }
 
@@ -38,7 +68,7 @@ body {
     position: absolute;
     width: 4px; /* Visible size */
     height: 6px; /* Visible size */
-    background-color: gold;
+    background-color: rgba(242, 202, 136, 0.95);
     border-radius: 50%;
     animation: fly-up 1.5s ease-out forwards;
 }
@@ -58,12 +88,12 @@ body {
 /* Firework particle styles */
 .firework {
     position: absolute;
-    width: 8px; /* Particle size */
-    height: 8px; /* Particle size */
-    background-color: gold;
+    width: 2px; /* Particle size */
+    height: 2px; /* Particle size */
+    background-color: rgba(242, 202, 136, 0.95);
     border-radius: 50%;
     animation: fade 1.5s ease-out forwards, move-out 1.5s ease-out forwards, trail 3s linear forwards;
-    box-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold; /* Tail effect */
+    box-shadow: 0 0 10px rgba(242, 202, 136, 0.95), 0 0 20px rgba(242, 202, 136, 0.95), 0 0 30px rgba(242, 202, 136, 0.95); /* Tail effect */
 }
 
 /* Particle fade animation */
@@ -82,16 +112,12 @@ body {
         transform: translateX(0) translateY(0);
         opacity: 1;
     }
-    50% {
+    70% {
         transform: translateX(var(--offset-x)) translateY(var(--offset-y)); /* Move outward */
         opacity: 1;
     }
-    85% {
-        transform: translateX(var(--offset-x)) translateY(calc(var(--offset-y) + 100px)); /* Fall downward with slight horizontal drift */
-        opacity: 0.5;
-    }
-    100% {
-        transform: translateX(var(--offset-x)) translateY(calc(var(--offset-y) + 200px)); /* Fall downward with slight horizontal drift */
+    100%{
+        transform: translateX(var(--offset-x)) translateY(var(--offset-y)); /* Move outward */
         opacity: 0;
     }
 }
@@ -101,11 +127,11 @@ body {
     0% {
         transform: translateX(0) translateY(0);
         opacity: 1;
-        box-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px gold; /* Initial tail */
+        box-shadow: 0 0 10px rgba(242, 202, 136, 0.95), 0 0 20px rgba(242, 202, 136, 0.95), 0 0 30px rgba(242, 202, 136, 0.95); /* Initial tail */
     }
     100% {
         transform: translateX(var(--offset-x)) translateY(var(--offset-y)); /* Follow the move-out path */
         opacity: 0;
-        box-shadow: 0 0 50px gold, 0 0 100px gold, 0 0 200px gold; /* Fading trail */
+        box-shadow: 0 0 50px rgba(242, 202, 136, 0.95), 0 0 100px rgba(242, 202, 136, 0.95), 0 0 200px rgba(242, 202, 136, 0.95); /* Fading trail */
     }
 }
