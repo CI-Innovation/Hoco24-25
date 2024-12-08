@@ -9,3 +9,88 @@ html, body {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
 }
+
+.invisible-link {
+    position: fixed; /* Center it on the viewport */
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Align the div to the exact center */
+    width: 300px; /* Define width for clickable area */
+    height: 200px; /* Define height for clickable area */
+    color: red;
+    opacity: 1; /* Make it invisible */
+    z-index: 2; /* Ensure it's above other elements */
+    pointer-events: all; /* Ensure the link is clickable despite being invisible */
+}
+
+.invisible-link a {
+    display: block; /* Make the link fill the entire div */
+    width: 100%;
+    height: 100%;
+}
+
+.athletes {
+    position: absolute;
+    bottom: 50px; /* Place it at the bottom */
+    left: 75%; /* Horizontally center it */
+    transform: translateX(-70%) translateY(3%);
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+    height: auto;
+    z-index: 3;
+}
+
+.athletes img {
+    content: url("../img/Athletes.png"); /* Default image */
+    transition: 0.3s ease; /* Optional: smooth transition */
+    width: 105%; /* Make sure the image fills the mansion container */
+    height: auto; /* Keep aspect ratio intact */
+    min-width: 150px; /* Set a minimum width to prevent it from becoming too small */
+}
+
+.athletes-img:hover {
+    content: url("../img/Athletes_Hover.png"); /* Change image on hover */
+}
+
+
+.leaderboard {
+    position: absolute;
+    bottom: 30px; /* Place it at the bottom */
+    left: 33%; /* Horizontally center it */
+    transform: translateX(-70%) translateY(3%);
+    max-width: 40%; /* Ensure it doesn't exceed the viewport width */
+    height: auto;
+    z-index: 3;
+}
+
+.leaderboard img {
+    content: url("../img/Leaderboard.png"); /* Default image */
+    transition: 0.3s ease; /* Optional: smooth transition */
+    width: 100%; /* Make sure the image fills the mansion container */
+    height: auto; /* Keep aspect ratio intact */
+}
+
+.leaderboard-img:hover {
+    content: url("../img/Leaderboard_Hover.png"); /* Change image on hover */
+}
+
+.border {
+    position: absolute;
+    top: 0;
+    transform: translateX(0%) translateY(0%); /* Correct the centering by moving it left by 50% of its width */
+    max-height: 90%; /* Set the maximum width (adjust as necessary) */
+    z-index: 2; /* Ensure the mansion is above the fireworks */
+}
+.border img {
+    height: 100%; /* Make sure the image fills the mansion container */
+}
+
+.chandelier {
+    position: absolute;
+    top: 0;
+    transform: translateX(0%) translateY(0%); /* Correct the centering by moving it left by 50% of its width */
+    max-height: 90%; /* Set the maximum width (adjust as necessary) */
+    z-index: 2; /* Ensure the mansion is above the fireworks */
+}
+.chandelier img {
+    height: 100%; /* Make sure the image fills the mansion container */
+}
