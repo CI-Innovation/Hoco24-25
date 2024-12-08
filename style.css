@@ -1,13 +1,14 @@
 /* General styles */
-body {
+html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%; /* Ensure it spans the entire viewport height */
+    overflow: hidden; /* Prevent scrolling */
     background-image: url('img/Background.png'); /* Set the background image */
-    background-size: cover; /* Ensure the image covers the entire page */
-    background-position: center; /* Center the background image */
+    background-size: cover; /* Make the image cover the entire viewport */
+    background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
-    position: relative;
-    height: 100vh;
 }
 
 /* Mansion */
@@ -15,29 +16,42 @@ body {
     position: absolute;
     bottom: 0; /* Place it at the bottom */
     left: 50%; /* Horizontally center it */
-    transform: translateX(-70%) translateY(3%); /* Correct the centering by moving it left by 50% of its width */
-    max-width: 140%; /* Set the maximum width (adjust as necessary) */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 4; /* Ensure the mansion is above the fireworks */
+    transform: translateX(-70%) translateY(3%);
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+    height: auto;
+    z-index: 4;
 }
 
 .mansion img {
-    width: 140%; /* Make sure the image fills the mansion container */
+    content: url("img/Mansion.png"); /* Default image */
+    transition: 0.3s ease; /* Optional: smooth transition */
+    width: 141%; /* Make sure the image fills the mansion container */
     height: auto; /* Keep aspect ratio intact */
+}
+
+.mansion-img:hover {
+    content: url("img/Mansion_Hover.png"); /* Change image on hover */
 }
 
 .moon {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(-53%) translateY(-3%); /* Correct the centering by moving it left by 50% of its width */
-    max-width: 100%; /* Set the maximum width (adjust as necessary) */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 3; /* Ensure the mansion is above the fireworks */
+    transform: translateX(-53%) translateY(-3%);
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+    height: auto;
+    z-index: 3;
 }
+
 .moon img {
+    content: url("img/Moon.png"); /* Default image */
+    transition: 0.3s ease; /* Optional: smooth transition */
     width: 100%; /* Make sure the image fills the mansion container */
     height: auto; /* Keep aspect ratio intact */
+}
+
+.moon-img:hover {
+    content: url("img/Moon_Hover.png"); /* Change image on hover */
 }
 
 .border {
@@ -48,31 +62,7 @@ body {
     z-index: 2; /* Ensure the mansion is above the fireworks */
 }
 .border img {
-    height: 90%; /* Make sure the image fills the mansion container */
-}
-
-.leftdoor {
-    position: absolute;
-    top: 64%;
-    left: 41.1%;
-    max-width: 95%; /* Set the maximum width (adjust as necessary) */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 5; /* Ensure the mansion is above the fireworks */
-}
-.leftdoor img {
-    width: 95%; /* Make sure the image fills the mansion container */
-}
-
-.rightdoor {
-    position: absolute;
-    top: 64%;
-    left: 49.9%;
-    max-width: 95%; /* Set the maximum width (adjust as necessary) */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 5; /* Ensure the mansion is above the fireworks */
-}
-.rightdoor img {
-    width: 95%; /* Make sure the image fills the mansion container */
+    height: 100%; /* Make sure the image fills the mansion container */
 }
 
 /* Fireworks container */
@@ -81,8 +71,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Full height for particle launch */
-    z-index: 2; /* Place fireworks behind the mansion */
+    height: 100%; /* Match the viewport height */
+    z-index: 2;
     pointer-events: none; /* Prevent interaction */
 }
 
