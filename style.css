@@ -65,6 +65,65 @@ html, body {
     height: 100%; /* Make sure the image fills the mansion container */
 }
 
+.logo {
+    position: absolute;
+    bottom: 30%; /* Place it at the bottom */
+    left: 49.3%; /* Horizontally center it */
+    transform: translateX(-70%) translateY(3%);
+    max-width: 40%; /* Ensure it doesn't exceed the viewport width */
+    height: auto;
+    z-index: 5;
+    animation: shrinkLogo 4s ease-in-out forwards;
+}
+.logo img {
+    width: 140%; /* Make sure the image fills the mansion container */
+}
+
+.curtains {
+    position: absolute;
+    top: 0;
+    transform: translateX(0%) translateY(0%); /* Correct the centering by moving it left by 50% of its width */
+    max-height: 90%; /* Set the maximum width (adjust as necessary) */
+    z-index: 4;
+    animation: drawCurtains 4s ease-in-out forwards, lowerZ 5s ease-in-out forwards;
+}
+.curtains img {
+    width: 100%
+}
+
+@keyframes shrinkLogo {
+    0% {
+        transform: translateX(-70%) translateY(3%) scale(1); /* Start big */
+    }
+    75% {
+        transform: translateX(-70%) translateY(3%) scale(1); /* Wait for 3s */
+    }
+    100% {
+        transform: translateX(-47%) translateY(3%) scale(0); /* Shrink to normal size */
+    }
+}
+
+@keyframes drawCurtains {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes lowerZ {
+    90% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 1; /* Change z-index at the end */
+    }
+}
+
 /* Fireworks container */
 .fireworks-container {
     position: absolute;
