@@ -17,9 +17,12 @@ html, body {
 
 .announcement {
     position: absolute;
-    left: 35%;
-    bottom: 40%;
-    width: 30%
+    left: 33%;
+    bottom: 35%;
+    width: 30%;
+    background-color: white; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px; /* Add padding inside the div */
 }
 
 .announcement h1 {
