@@ -35,10 +35,6 @@ html, body {
 .citations {
     position: absolute;
     bottom: 20px;
-    right: 0px;
+    right: 30px;
     z-index: 4;
-}
-
-.citations img{
-    width: 70%
 }
