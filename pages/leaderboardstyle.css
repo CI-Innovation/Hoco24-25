@@ -31,3 +31,14 @@ html, body {
     color: rgba(242, 202, 136, 0.95); /* Optional styling */
     text-align: center;
 }
+
+.citations {
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    z-index: 4;
+}
+
+.citations img{
+    width: 70%
+}

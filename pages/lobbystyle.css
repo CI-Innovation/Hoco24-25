@@ -94,3 +94,14 @@ html, body {
 .chandelier img {
     height: 100%; /* Make sure the image fills the mansion container */
 }
+
+.citations {
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    z-index: 4;
+}
+
+.citations img{
+    width: 70%
+}
