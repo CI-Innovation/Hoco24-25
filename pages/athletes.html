@@ -3,14 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaderboard</title>
-    <link rel="stylesheet" href="leaderboardstyle.css">
+    <title>Athletes</title>
+    <link rel="stylesheet" href="athleteticket.css">
 </head>
 <body>
-    <div class = "announcement">
-        <h1>
-            The schedule for homecoming week is yet to come out. Stay tuned!
-        </h1>
+    <div class="slider-wrapper">
+        <button id="backBtn" class="slider-button"><img src="../img/Back.png" alt="Back"></button>
+        <div class="slider-container">
+            <div class="slide" id="slide1">
+                <h1>
+                    Table Tennis
+                </h1>
+                <div class="img" style="position: absolute; left: 30px; top: 100px;">
+                    <img src = "../athletes/DannyKim.png" style="width: 120px">
+                </div>
+                <h1 style="left: 430px;">
+                    Cheer
+                </h1>
+                <div class="img" style="position: absolute; left: 430px; top: 100px;">
+                    <img src = "../athletes/MollyLee.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/JacquelinePark.png" style="width: 120px; margin-right: 30px;">
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <h1>
+                    Swimming
+                </h1>
+                <div class="img" style="position: absolute; left: 30px; top: 100px;">
+                    <img src = "../athletes/IanPark.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/KyleChung.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/BrandonHan.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/DanielJung.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/SoyulLee.png" style="width: 120px; margin-right: 30px;">
+                </div>
+                <div class="img" style="position: absolute; left: 30px; top: 300px;">
+                    <img src = "../athletes/SavannahHong.png" style="width: 120px; margin-right: 30px;">
+                </div>
+            </div>
+            <div class="slide" id="slide3">
+                <h1>
+                    Basketball
+                </h1>
+                <div class="img" style="position: absolute; left: 30px; top: 100px;">
+                    <img src = "../athletes/WilliamLee.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/StevenKwon.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/JaewooJung.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/EdenAn.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/AllenHan.png" style="width: 120px; margin-right: 30px;">
+                </div>
+                <div class="img" style="position: absolute; left: 30px; top: 300px;">
+                    <img src = "../athletes/IshaDelCarmen.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/BlenArega.png" style="width: 120px; margin-right: 30px;">
+                    <img src = "../athletes/LouiseHan.png" style="width: 120px; margin-right: 30px;">
+                </div>
+            </div>
+        </div>
+        <button id="nextBtn" class="slider-button"><img src="../img/Next.png" alt="Next"></button>
     </div>
     <div class="citations">
         <a href = "mailto:y2lee2027@chadwickschool.org">
@@ -24,4 +72,5 @@
         <a href="athletes.html" class="menu-link" style="left: 48%; width: 28%;">Page 3</a>
         <a href="leaderboard.html" class="menu-link" style="left: 76%; width: 24%;">Page 4</a>
     </div>
+    <script src = "athleteticket.js"></script>
 </body>

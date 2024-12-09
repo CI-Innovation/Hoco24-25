@@ -21,7 +21,7 @@ html, body {
     bottom: 35%;
     width: 30%;
     background-color: white; /* White background */
-    border-radius: 15px; /* Rounded corners */
+    border-radius: 24px; /* Rounded corners */
     padding: 30px; /* Add padding inside the div */
 }
 
