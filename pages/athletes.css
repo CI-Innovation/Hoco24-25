@@ -60,8 +60,8 @@ html, body {
     position: relative;
     flex: 1; /* Expand to take up available space */
     overflow: hidden;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    border: 2px solid #fff;
+    border-radius: 24px;
     height: 500px; /* Increase height for larger slides */
     width: 700px;
     background-color: #fff;
@@ -83,7 +83,7 @@ html, body {
 .slide h1{
     position: absolute;
     top: 30px;
-    left: 30px;
+    left: 60px;
     margin: 0;
     font-size: 40px;
     font-family: 'Young 20'
