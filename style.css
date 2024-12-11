@@ -68,15 +68,14 @@ html, body {
 .logo {
     position: absolute;
     bottom: 30%; /* Place it at the bottom */
-    left: 49.3%; /* Horizontally center it */
-    transform: translateX(-70%) translateY(3%);
+    left: 54.8%; /* Horizontally center it */
     max-width: 40%; /* Ensure it doesn't exceed the viewport width */
     height: auto;
     z-index: 6;
     animation: shrinkLogo 4s ease-in-out forwards;
 }
 .logo img {
-    width: 140%; /* Make sure the image fills the mansion container */
+    width: 120%; /* Make sure the image fills the mansion container */
 }
 
 .curtains {
@@ -129,7 +128,7 @@ html, body {
         transform: translateX(-70%) translateY(3%) scale(1); /* Wait for 3s */
     }
     100% {
-        transform: translateX(-47%) translateY(3%) scale(0); /* Shrink to normal size */
+        transform: translateX(-61%) translateY(3%) scale(0); /* Shrink to normal size */
     }
 }
 
