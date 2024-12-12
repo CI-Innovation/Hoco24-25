@@ -84,10 +84,14 @@ html, body {
     transform: translateX(0%) translateY(0%); /* Correct the centering by moving it left by 50% of its width */
     max-height: 90%; /* Set the maximum width (adjust as necessary) */
     z-index: 5;
+    width: 100%;
+    height: 100%;
     animation: drawCurtains 4s ease-in-out forwards, lowerZ 5s ease-in-out forwards;
 }
 .curtains img {
-    width: 100%
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .citations {
