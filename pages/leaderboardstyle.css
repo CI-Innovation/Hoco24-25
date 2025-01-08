@@ -16,10 +16,9 @@ html, body {
 }
 
 .container {
-    margin-left: 17%;
     justify-content: center;
-    position: absolute;
-    margin-top: 100px;
+    position: relative;
+    margin-top: 130px;
     display: flex;
 }
 
@@ -35,7 +34,7 @@ html, body {
     text-align: center;
     font-size: 30px;
     font-family: 'Young 20';
-    margin-bottom: 170px;
+    margin-bottom: 100px;
 }
 
 .container img{
@@ -93,6 +92,28 @@ html, body {
     margin-bottom: 250px;
 }
 
+.schedule {
+    display: flex;
+    position: relative;
+    gap: 10px;
+    align-items: flex-end;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.bar {
+    width: 15%;
+    background-color: #4caf50;
+    position: relative;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
 .citations {
     position: fixed; /* Keep the element fixed relative to the viewport */
     bottom: 20px;    /* Distance from the bottom of the viewport */
@@ -101,7 +122,7 @@ html, body {
 }
 
 .menu {
-    position: absolute;
+    position: fixed;
     left: 30px;
     top: 20px;
     width: fit-content; /* Adjust to fit the image */
